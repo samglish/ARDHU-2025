@@ -22,88 +22,6 @@ require_once 'header.php';
 
 <main>
 
-<!-- ======= Titre de page ARDHU ======= -->
-<!-- BANNIÈRE ARDHU -->
-<div class="banner">
-  <div class="overlay">
-    <div class="text-center">
-      <h2 class="ardhu-title">
-        Action pour le Respect des Droits de l’Homme et Dignité Humaine (ARDHU)
-      </h2>
-      <p class="text-muted small">
-        Association camerounaise à but non lucratif – Créée le 11 septembre 2019 à Maroua
-      </p>
-    </div>
-  </div>
-</div>
-
-<!-- STYLE CSS -->
-<style>
-.banner {
-  background: url('apropos/logo.jpg') center/cover no-repeat;
-  color: white;
-  min-height: 140px; /* devient flexible plutôt que fixe */
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.overlay {
-  background: rgba(255, 251, 252, 0.7); /* voile bordeaux semi-transparent */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px 15px;
-  box-sizing: border-box;
-}
-
-.ardhu-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-  line-height: 1.3;
-}
-
-.text-muted.small {
-  font-size: 0.9rem;
-  color: #f9f9f9;
-  opacity: 0.9;
-}
-
-/* 🌐 Responsive Design */
-@media (max-width: 768px) { /* Tablette */
-  .ardhu-title {
-    font-size: 1.1rem;
-  }
-  .text-muted.small {
-    font-size: 0.8rem;
-  }
-  .banner {
-    min-height: 130px;
-  }
-}
-
-@media (max-width: 480px) { /* Téléphone */
-  .ardhu-title {
-    font-size: 1rem;
-    padding: 0 8px;
-  }
-  .text-muted.small {
-    font-size: 0.75rem;
-  }
-  .banner {
-    min-height: 150px; /* un peu plus haut pour respirer sur mobile */
-  }
-}
-</style>
 
 <!-- ======= Section Connexion Invitation ======= -->
 <section class="ardhu-login-invite" data-aos="zoom-in">
@@ -200,37 +118,43 @@ require_once 'header.php';
 /* ===================== */
 
 </style>
+<!-- ======= Galerie de présentation ======= -->
+<section id="portfolio-details" class="portfolio-details py-5">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-8 mx-auto">
 
-  <!-- ======= Galerie de présentation ======= -->
-  <section id="portfolio-details" class="portfolio-details">
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-8 mx-auto">
-          <div class="portfolio-details-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <?php
-              // Images de la galerie
-              $images = glob("apropos/image*.jpg");
-              foreach ($images as $img) {
-                  echo '<div class="swiper-slide"><img src="'.$img.'" alt=""></div>';
-              }
-              ?>
-            </div>
-            <div class="swiper-pagination"></div>
+        <div class="portfolio-details-slider swiper shadow-lg rounded-4 overflow-hidden border border-2" style="border-color:#800020;">
+          <div class="swiper-wrapper align-items-center">
+
+            <?php
+            // Images de la galerie
+            $images = glob("apropos/image*.jpg");
+            foreach ($images as $img) {
+                echo '
+                <div class="swiper-slide">
+                  <img src="'.$img.'" alt="" class="galerie-img">
+                </div>';
+            }
+            ?>
+
           </div>
+          <div class="swiper-pagination"></div>
         </div>
+
       </div>
     </div>
-  </section>
-  <!-- End Galerie -->
+  </div>
+</section>
+<!-- End Galerie -->
 
   <!-- ======= Présentation ONG ======= -->
   <section class="ardhu-section" data-aos="fade-up">
     <div class="container ardhu-container">
 
       <div class="text-center mb-4">
-        <h2 class="ardhu-title">Action pour le Respect des Droits de l’Homme et la Dignité Humaine (ARDHU)</h2>
-        <p class="text-muted small">Association camerounaise à but non lucratif – Créée le 11 septembre 2019 à Maroua</p>
+        <h2 class="ardhu-title">Action pour le Respect des Droits de l’Homme et Dignité Humaine (ARDHU)</h2>
+        <p class="text-muted small">Association camerounaise à but non lucratif –  Créée le 11 septembre 2019 à Maroua sous la loi n°90/053 du 19 décembre 1990 portant sur la liberté d'association</p>
       </div>
 
       <div class="ardhu-intro">
@@ -259,12 +183,14 @@ require_once 'header.php';
       <div class="ardhu-domains mt-4" data-aos="zoom-in">
         <h3>Nos domaines d’intervention</h3>
         <ul class="domain-list">
-          <li>Droits humains et égalité de genre</li>
-          <li>Santé mentale et soutien psychosocial</li>
-          <li>Lutte contre les violences basées sur le genre (VBG)</li>
-          <li>Protection de l’enfance et éducation</li>
-          <li>Cohésion sociale et prévention de l’extrémisme violent</li>
-          <li>Développement durable et autonomisation des femmes</li>
+           <a href="PG.php"><li>Protection Générale</li></a>
+          <a href="DroitHumain.php"><li>AGR et Protection de l'environnement</li></a>
+          <a href="SanteMentale.php"><li>Santé mentale et soutien psychosocial</li></a>
+          <a href="VBG.php"><li>Lutte contre les violences basées sur le genre (VBG)</li></a>
+          <a href="PE.php"><li>Protection de l’enfance et éducation</li></a>
+          <a href="CSPE.php"><li>Cohésion sociale et prévention de l’extrémisme violent</li></a>
+          <a href="DAF.php"><li>Développement durable et autonomisation des femmes</li></a>
+        <a href="LTP.php"><li>Logement, Terre et Propriété (LTP)</li></a>
         </ul>
       </div>
 
@@ -285,7 +211,7 @@ require_once 'header.php';
     <div class="col-md-4" data-aos="zoom-in">
       <div class="card h-100 shadow-sm border-0">
         <div class="activity-photo" style="background:#f2f2f2; height:200px; display:flex; align-items:center; justify-content:center;">
-          <span style="color:#aaa;"><img src="apropos/image17.jpg" height="200px" width="300px" ></span>
+          <span style="color:#aaa;"><img src="apropos/vbg4.jpg" height="200px" width="300px" ></span>
         </div>
         <div class="card-body">
           <h5 class="card-title" style="color:#800020;">Soutien psychosocial aux femmes victimes de violence</h5>
@@ -297,7 +223,7 @@ require_once 'header.php';
     <div class="col-md-4" data-aos="zoom-in">
       <div class="card h-100 shadow-sm border-0">
         <div class="activity-photo" style="background:#f2f2f2; height:200px; display:flex; align-items:center; justify-content:center;">
-          <span style="color:#aaa;"><img src="apropos/img4.jpg" height="200px" width="300px" ></span>
+          <span style="color:#aaa;"><img src="apropos/img6.jpg" height="200px" width="300px" ></span>
         </div>
         <div class="card-body">
           <h5 class="card-title" style="color:#800020;">Sensibilisation sur les droits humains et la cohésion sociale</h5>
@@ -319,71 +245,240 @@ require_once 'header.php';
     </div>
   </div>
 
-  <!-- Hiérarchie de l'ONG -->
-  <div class="mt-5 pt-4">
-    <div class="text-center mb-4">
-      <h2 style="color:#800020; font-weight:700;">Notre Équipe et Hiérarchie</h2>
-      <p class="text-muted">L’ARDHU repose sur une équipe dévouée, unie par un engagement commun : la dignité humaine et la justice sociale.</p>
-    </div>
+  <style>
+    .read-more-content {
+  display: none;
+}
+.read-more-btn {
+  cursor: pointer;
+  color: #800020;
+  font-weight: bold;
+}
 
-    <div class="row justify-content-center mb-5" data-aos="fade-up">
-      <div class="col-md-4 text-center">
-        <div class="card border-0 shadow-sm p-3">
-          <div class="president-photo" style="background:#f2f2f2; height:220px; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-            <span style="color:#aaa;"><img src="apropos/presi.jpg" height="200px" width="300px" ></span>
-          </div>
-          <h5 class="mt-3" style="color:#800020;">Nom du Président</h5>
-          <p class="text-muted mb-1">Président de l’ONG ARDHU</p>
-          <p class="mt-2">Le président dirige la vision stratégique de l’organisation et veille à la mise en œuvre des projets pour la promotion des droits humains et le bien-être communautaire.</p>
-        </div>
-      </div>
-    </div>
+</style>
+    <section class="student-achievements my-5">
+  <div class="container text-center">
+    <h3 style="color:#800020; font-weight:700;">La Journée de l'Enfant Africain</h3>
+    <p class="text-muted mb-4">
+     ARDHU œuvre pour l'épanouissement et la scolarisation des enfants vulnérables dans les quartiers défavorisés à travers des activités socio-culturelles (danses, jeux) et des dons de fournitures scolaires. 
+    </p>
 
-    <div class="row text-center g-4" data-aos="fade-up">
-      <div class="col-md-3">
-        <div class="team-photo" style="background:#f2f2f2; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-          <span style="color:#aaa;">Photo</span>
-        </div>
-        <h6 class="mt-2" style="color:#800020;">Vice-Président(e)</h6>
+    <div class="videos-row" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+      
+      <!-- Vidéo Hackathon -->
+      <div class="video-wrapper fade-in" style="flex:1 1 380px; max-width:480px;">
+        <h5 style="color:#800020; font-weight:600; margin-bottom:10px;">La descente à l’école primaire d'application de Mandaka s'inscrit dans un programme de soutien à la scolarisation dans les zones reculées de l'Extrême-Nord.</h5>
+        <video 
+          controls 
+          width="100%" 
+          height="270" 
+          style="border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
+          <source src="apropos/video1.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéo.
+        </video>
       </div>
-      <div class="col-md-3">
-        <div class="team-photo" style="background:#f2f2f2; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-          <span style="color:#aaa;">Photo</span>
-        </div>
-        <h6 class="mt-2" style="color:#800020;">Secrétaire Général(e)</h6>
+
+      <!-- Vidéo Soutenance -->
+      <div class="video-wrapper fade-in" style="flex:1 1 380px; max-width:480px;">
+        <h5 style="color:#800020; font-weight:600; margin-bottom:10px;">Jeu de cohésion sociale(Les enfants et les mères se tiennent par la main pour former une grande ronde, symbolisant l'union entre la communauté)</h5>
+        <video 
+          controls 
+          width="100%" 
+          height="270" 
+          style="border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
+          <source src="apropos/video2.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéo.
+        </video>
       </div>
-      <div class="col-md-3">
-        <div class="team-photo" style="background:#f2f2f2; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-          <span style="color:#aaa;">Photo</span>
-        </div>
-        <h6 class="mt-2" style="color:#800020;">Trésorier(ère)</h6>
+
+       <!-- Vidéo Journee -->
+      <div class="video-wrapper fade-in" style="flex:1 1 380px; max-width:480px;">
+        <h5 style="color:#800020; font-weight:600; margin-bottom:10px;">Les cris de « ARDHU ! ARDHU ! » poussés par les enfants témoignent de la joie et de la reconnaissance ARDHU</h5>
+        <video 
+          controls 
+          width="100%" 
+          height="270" 
+          style="border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.15);">
+          <source src="apropos/video3.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéo.
+        </video>
       </div>
-      <div class="col-md-3">
-        <div class="team-photo" style="background:#f2f2f2; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-          <span style="color:#aaa;">Photo</span>
-        </div>
-        <h6 class="mt-2" style="color:#800020;">Responsable Communication</h6>
-      </div>
+
     </div>
   </div>
 </section>
 
-<section class="donations-section">
-    <h2><i class="fas fa-hand-holding-heart"></i> Soutenir Nos Actions</h2>
-    <p>
-        La rubrique <strong>Donations</strong> permet à toute personne de contribuer directement aux actions humanitaires, 
-        sociales et éducatives menées par notre communauté. Chaque don, quel qu’en soit le montant, 
-        aide à financer des activités de <strong>soutien psychosocial</strong>, des programmes de <strong>formation</strong>, 
-        ou encore des initiatives de <strong>solidarité étudiante</strong> et communautaire.
-    </p>
-    <p>
-        Votre geste, aussi simple soit-il, participe à créer un impact durable et positif dans la vie de nombreux bénéficiaires. 
-        Ensemble, faisons de la solidarité une réalité.
-    </p>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const content = this.previousElementSibling; // Le texte long juste avant le btn
 
+        if (content.style.display === "none" || content.style.display === "") {
+          content.style.display = "block";
+          this.innerHTML = "Lire moins ▲";
+        } else {
+          content.style.display = "none";
+          this.innerHTML = "Lire plus ▼";
+        }
+      });
+    });
+  });
+</script>
+
+
+<!-- SECTION : Notre Équipe -->
+<section class="mt-5 pt-4">
+  <div class="text-center mb-5">
+    <h2 style="color:#800020; font-weight:700;">Notre Équipe & Hiérarchie</h2>
+    <p class="text-muted">L’ARDHU est portée par des femmes et des hommes engagés, unis autour des valeurs de dignité humaine, solidarité et justice sociale.</p>
+  </div>
+
+  <!-- Président -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm p-4 text-center" data-aos="fade-up">
+        <div class="rounded mb-3 overflow-hidden" style="height:280px; background:#f2f2f2;">
+          <img src="apropos/presi.jpg" class="img-fluid h-100 w-100" style="object-fit:cover;">
+        </div>
+
+        <h4 style="color:#800020;">TCHANA Temagné Gildas Delmas</h4>
+        <p class="text-muted mb-3">Président – Action pour le Respect des Droits de l’Homme et Dignité Humaine (ARDHU)</p>
+
+        <!-- résumé court -->
+        <p class="text-justify">
+          Ancien enfant de la rue devenu leader communautaire et pasteur respecté, il incarne une trajectoire exceptionnelle de résilience et d’élévation sociale.
+        </p>
+
+        <!-- texte complet masqué -->
+        <p class="read-more-content text-justify">
+          TCHANA Temagné Gildas Delmas est le Président et fondateur de l’Action pour le Respect des Droits de l’Homme et la Dignité Humaine (ARDHU). Ancien enfant de la rue devenu leader communautaire et pasteur respecté, il incarne l’une des trajectoires les plus puissantes de résilience et d’élévation sociale au Cameroun. Son parcours, marqué par une enfance et une jeunesse extrêmement difficiles, fait de lui un exemple vivant de détermination, d’excellence et d’inspiration pour les jeunes de sa génération.<br><br>
+
+          Guidé par une foi profonde et un sens aigu du devoir moral, Gildas combine leadership spirituel et engagement social. En tant que pasteur, il accompagne de nombreuses personnes dans leur reconstruction personnelle, leur équilibre émotionnel et leur marche vers une vie plus digne. Cette dimension spirituelle renforce son approche humaine du développement communautaire et de la défense des droits fondamentaux.<br><br>
+
+          Visionnaire et stratège, il a fondé ARDHU pour offrir aux enfants, aux jeunes, aux femmes et aux populations vulnérables la dignité, la protection et les opportunités qu’il n’a pas eues dans son enfance. Aujourd’hui, l’organisation est reconnue pour son impact dans l’Extrême-Nord du Cameroun et au-delà, grâce à des programmes innovants en droits humains, cohésion sociale, protection de l’enfance, éducation citoyenne et action humanitaire.<br><br>
+
+          Sous son leadership, ARDHU a consolidé une approche centrée sur l’humain, la sécurité communautaire, la paix et la solidarité. Sa capacité à mobiliser, fédérer et inspirer partenaires, jeunes, leaders locaux et institutions fait de lui une figure incontournable dans le paysage humanitaire et social camerounais.<br><br>
+
+          Pasteur engagé, homme d’excellence et modèle de résilience, TCHANA Temagné Gildas Delmas œuvre chaque jour pour bâtir un avenir où chaque personne, quel que soit son parcours de vie, peut accéder à la dignité, à la sécurité et à la transformation.
+        </p>
+
+        <span class="read-more-btn">Lire plus ▼</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTRES MEMBRES -->
+  <div class="row text-center g-4 mt-5" data-aos="fade-up">
+
+    <!-- Vice-présidente -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm p-3 h-100">
+        <div class="rounded mb-3 overflow-hidden" style="height:200px; background:#f2f2f2;">
+          <img src="apropos/vicepresi.jpg" class="img-fluid h-100 w-100" style="object-fit:cover;">
+        </div>
+        <h5 style="color:#800020;">Wandji Temagné Cléonce Dior</h5>
+        <p class="text-muted">Vice-Présidente ARDHU</p>
+
+        <p class="text-justify">
+          Éducatrice dynamique, elle œuvre pour l’inclusion, l’éducation et le développement humain au sein des communautés.
+        </p>
+
+        <p class="read-more-content text-justify">
+          Wandji Temagné Cléonce Dior est une éducatrice dynamique et engagée, actuellement vice-présidente de l'Organisation ARDHU. À l'âge de 35 ans, elle bénéficie d'une solide expérience dans le domaine éducatif, grâce à son diplôme de CAPIEMP obtenu en 2019, où elle s'investit pleinement dans l'épanouissement des communautés.<br><br>
+
+          Son rôle à ARDHU consiste à promouvoir l'éducation et le développement humain, en veillant à ce que chaque projet soit axé sur l'inclusion et la croissance personnelle. Dotée d'un grand dynamisme, Cléonce s'efforce de mettre en place des initiatives qui transforment positivement la communauté.<br><br>
+
+          Passionnée par son métier et par les enjeux sociaux, Cléonce est déterminée à œuvrer pour un avenir meilleur, alliant expertise éducative et engagement communautaire. Son leadership et sa vision éclairée en font une figure inspirante au sein de l'organisation.<br><br>
+
+          Pour Cléonce, chaque action compte et contribue à construire un monde plus juste et équitable.
+        </p>
+
+        <span class="read-more-btn">Lire plus ▼</span>
+      </div>
+    </div>
+
+    <!-- Logisticienne -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm p-3 h-100">
+        <div class="rounded mb-3 overflow-hidden" style="height:200px; background:#f2f2f2;">
+          <img src="apropos/logisticien.jpg" class="img-fluid h-100 w-100" style="object-fit:cover;">
+        </div>
+        <h5 style="color:#800020;">Muku Francisca</h5>
+        <p class="text-muted">Logisticienne ARDHU</p>
+
+        <p class="text-justify">Jeune professionnelle talentueuse, rigoureuse et passionnée par l’optimisation des processus.</p>
+
+        <p class="read-more-content text-justify">
+          Muku Francisca est une jeune professionnelle talentueuse et engagée, titulaire d’une licence en Logistique et Transport Management. À seulement 20 ans, elle occupe avec excellence le rôle de Logisticienne au sein d’ARDHU, où elle met en œuvre son expertise, sa discipline et son sens aigu de l’organisation.<br><br>
+
+          Depuis plus de deux ans, Francisca contribue activement au bon fonctionnement du département logistique. Elle s’est forgé une solide expérience dans la gestion des approvisionnements, la coordination des activités opérationnelles, la gestion des stocks et l’optimisation des ressources nécessaires aux actions humanitaires et sociales d’ARDHU.<br><br>
+
+          Passionnée par l’optimisation des processus et l’analyse des données, Francisca se distingue par sa volonté constante d’améliorer la qualité, la rapidité et la fiabilité des opérations.<br><br>
+
+          Ambitieuse et déterminée, elle travaille activement à renforcer ses compétences pour évoluer vers le poste de Coordinatrice Logistique d’ARDHU.<br><br>
+
+          En dehors de ses responsabilités, elle consacre du temps à la recherche, à l’apprentissage continu et aux initiatives communautaires.
+        </p>
+
+        <span class="read-more-btn">Lire plus ▼</span>
+      </div>
+    </div>
+
+    <!-- Trésorier -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm p-3 h-100">
+        <div class="rounded mb-3 d-flex align-items-center justify-content-center" style="height:200px; background:#f2f2f2;">
+          <span class="text-muted">Photo</span>
+        </div>
+        <h5 style="color:#800020;">Trésorier(ère)</h5>
+        <p class="text-justify">Responsable de la gestion financière, de la transparence et du suivi des ressources de l’ONG.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Responsable Communication -->
+  <div class="row text-center g-4 mt-4" data-aos="fade-up">
+    <div class="col-md-4 offset-md-4">
+      <div class="card border-0 shadow-sm p-3 h-100">
+        <div class="rounded mb-3 d-flex align-items-center justify-content:center" style="height:200px; background:#f2f2f2;">
+          <span class="text-muted">Photo</span>
+        </div>
+        <h5 style="color:#800020;">Responsable Communication</h5>
+        <p class="text-justify">Chargé(e) de la visibilité, des relations médias et de la diffusion des valeurs de l’ARDHU.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="donations-section">
+ <center>    <h2><i class="fas fa-hand-holding-heart"></i>Soutenir Nos Actions</center></h2>
+    <p>
+La rubrique Donations offre à toute personne, organisation ou partenaire l’opportunité de contribuer directement aux actions humanitaires et de développement menées par ARDHU dans les communautés les plus vulnérables. Chaque contribution, quel qu’en soit le montant, joue un rôle essentiel dans le renforcement de nos interventions et dans l’amélioration du bien-être des populations que nous accompagnons.
+Votre soutien permet notamment de financer des: 
+            </br></br>
+- activités de soutien psychosocial pour les enfants, les femmes et les personnes affectées par les crises ;</br>
+- programmes de formation et de renforcement des capacités destinés aux jeunes, aux leaders communautaires, aux enseignants et aux acteurs locaux ;</br>
+- actions de cohésion sociale, de médiation et de promotion du vivre-ensemble ; </br>
+- initiatives de protection de l’enfance, de défense des droits humains et de soutien aux personnes vulnérables ; </br>
+- projets de résilience économique, de protection de l’environnement et d’appui aux moyens de subsistance.
+</br>
+    </p>
+    <p>
+       En choisissant de soutenir ARDHU, vous contribuez directement à créer un impact durable :
+un impact qui se traduit par des enfants protégés, des familles accompagnées, des communautés renforcées, des droits respectés et des vies transformées.
+
+Chaque geste compte.
+Chaque contribution rapproche les communautés de la dignité, de la sécurité et de l’espoir qu’elles méritent.
+
+Ensemble, faisons vivre la solidarité, la justice et l’humanité.
+    </p>
+<center>
     <div class="donation-call">
         <a href="faire_don.php" class="btn-don"><i class="fas fa-donate"></i> Faire un Don Maintenant</a>
-    </div>
+    </div></center>
 </section>
 <style>
 /* SECTION DONATION */
@@ -394,7 +489,7 @@ require_once 'header.php';
     background: #f7fafc;
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
+    text-align:justify;
     font-family: 'Poppins', sans-serif;
 }
 
