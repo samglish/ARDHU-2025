@@ -5,7 +5,7 @@
     <div class="footer-section">
       <h3>À propos</h3>
       <p>
-        <strong>ARDHU</strong> (Action pour le Respect des Droits de l’Homme et la Dignité Humaine) 
+        <strong>ARDHU</strong> (Action pour le Respect des Droits de l’Homme et Dignité Humaine) 
         est une ONG camerounaise à but non lucratif basée à Maroua. 
         Elle œuvre pour la promotion, la défense et la protection des droits fondamentaux, 
         ainsi que pour la cohésion sociale et le développement humain durable.
